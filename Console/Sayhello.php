@@ -55,6 +55,7 @@ class Sayhello extends Command
 
 	protected function execute(InputInterface $input, OutputInterface $output)
 	{
+        $this->state->setAreaCode(\Magento\Framework\App\Area::AREA_FRONTEND);
             $totalCopies = $input->getOption(self::COPY);
             $productId=$input->getOption(self::PRODUCTID);
             for($i=0;$i<$totalCopies;$i++)
@@ -71,7 +72,7 @@ class Sayhello extends Command
                 $stockData=$product->getStockData();
                 $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); // instance of object manager
                 $product1 = $objectManager->create('\Magento\Catalog\Model\Product');
-                $this->state->setAreaCode(\Magento\Framework\App\Area::AREA_FRONTEND);
+                // $this->state->setAreaCode(\Magento\Framework\App\Area::AREA_FRONTEND);
                 $product1->setSku('w34'); // Set your sku here
                 $product1->setName($productName); // Name of Product
                 $product1->setAttributeSetId($attributeSetId); // Attribute set id
@@ -90,8 +91,11 @@ class Sayhello extends Command
                                         )
                                     );
                 $product1->save();
+                // $output->writeln($product1->getSku());
+                // $output->writeln($product1->getId());
+
             }
-        return $this->_redirect('grid/grid/index');
+        // return $this->_redirect('grid/grid/index');
 	}
 
     public function getLoadProduct($id)
