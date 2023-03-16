@@ -28,7 +28,6 @@ class Save extends \Magento\Backend\App\Action
      */
     public function execute()
     {
-        
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); // instance of object manager
         $product = $objectManager->create('\Magento\Catalog\Model\Product');
         $product->setSku('f54'); // Set your sku here
@@ -64,7 +63,7 @@ class Save extends \Magento\Backend\App\Action
         //             $randomid = mt_rand(100000,999999);  
         //             $data['content']=$randomid;
         //             // print_r($data);die();
-        //         }
+        //         }z
         //         else
         //         {
         //             $data['title']=$data['title'];

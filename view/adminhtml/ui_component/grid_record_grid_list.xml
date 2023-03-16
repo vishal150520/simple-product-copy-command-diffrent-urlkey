@@ -6,8 +6,6 @@
             <item name="deps" xsi:type="string">grid_record_grid_list.grid_record_grid_list_data_source</item>
         </item>
         <item name="spinner" xsi:type="string">grid_records_columns</item>
-
-
         <item name="buttons" xsi:type="array">
             <item name="add" xsi:type="array">
                 <item name="name" xsi:type="string">make copy</item>
@@ -16,6 +14,5 @@
                 <item name="url" xsi:type="string">*/*/addrow</item>
             </item>
         </item>
-        
     </argument>
 </listing>

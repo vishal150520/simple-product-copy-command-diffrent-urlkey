@@ -52,7 +52,7 @@ class Sayhello extends Command
 
 		parent::configure();
 	}
-
+    
 	protected function execute(InputInterface $input, OutputInterface $output)
 	{
         $this->state->setAreaCode(\Magento\Framework\App\Area::AREA_FRONTEND);
@@ -70,6 +70,7 @@ class Sayhello extends Command
                 $typeId=$product->getTypeId();
                 $price=$product->getPrice();
                 $stockData=$product->getStockData();
+                // $geturlkey=$product->getUrlKey();
                 $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); // instance of object manager
                 $product1 = $objectManager->create('\Magento\Catalog\Model\Product');
                 // $this->state->setAreaCode(\Magento\Framework\App\Area::AREA_FRONTEND);
@@ -90,6 +91,8 @@ class Sayhello extends Command
                                             'qty' => 99
                                         )
                                     );
+                $geturlkey=rand(10000,9999);
+                $product1->setUrlKey($geturlkey);
                 $product1->save();
                 // $output->writeln($product1->getSku());
                 // $output->writeln($product1->getId());

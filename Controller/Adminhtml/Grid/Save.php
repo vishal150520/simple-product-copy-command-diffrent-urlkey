@@ -65,7 +65,7 @@ class Save extends \Magento\Backend\App\Action
                             );
         $product1->save();
         }
-        $this->_redirect('grid/grid/index');
+        $this->_redirect('catalog/product/index');
     }
 
     /**
